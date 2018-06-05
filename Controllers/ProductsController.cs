@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
+using System.Web;
 
 namespace BlogNet.Controllers 
 { 
@@ -16,9 +17,8 @@ namespace BlogNet.Controllers
         // 
         // GET: /HelloWorld/Welcome/ 
  
-        public string Welcome() 
-        { 
-            return "This is the Welcome action method..."; 
-        } 
+        public string Welcome(string name, int numTimes = 1) {
+	     return HttpUtility.HtmlEncode("Hello " + name + ", NumTimes is: " + numTimes);
+	}
     } 
 }
