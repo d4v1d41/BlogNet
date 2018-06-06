@@ -35,9 +35,11 @@ namespace BlogNet
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+			services.AddDbContext<ApplicationDbContext>(options =>options.UseSqlite("DataSource=./app.db"));
+            /*
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("DefaultConnection")));*/
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
