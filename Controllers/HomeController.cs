@@ -12,14 +12,14 @@ namespace BlogNet.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Blog");
         }
 
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
 
-            return View();
+            return RedirectToAction("Index", "Blog");
         }
 
         public IActionResult Contact()
@@ -31,7 +31,7 @@ namespace BlogNet.Controllers
 
         public IActionResult Privacy()
         {
-            return View();
+            return RedirectToAction("Index", "Blog");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

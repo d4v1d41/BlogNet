@@ -1,14 +1,24 @@
 @model IEnumerable<BlogNet.Models.Blog>
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "BlogNet your personal website";
 }
 
-<h2>Index</h2>
+<h2>BlogNet your personal website</h2>
 
+@if (SignInManager.IsSignedIn(User))
+{
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-info" asp-action="Create">Create New</a>
 </p>
+}
+@if(Model.Count()==0) {
+	<h1 style="text-align:center;">Empty</h1>
+}
  @foreach (var item in Model) {
 
 <div class="general-posts">
