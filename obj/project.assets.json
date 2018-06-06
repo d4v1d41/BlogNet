@@ -12543,6 +12543,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "Microsoft.AspNetCore.App >= 2.1.0",
+      "Microsoft.EntityFrameworkCore.Design >= 2.1.0",
       "Microsoft.EntityFrameworkCore.Sqlite >= 2.1.0",
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.0"
@@ -12555,11 +12556,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/d4v1d41/Projects/BlogNet/BlogNet.csproj",
+      "projectUniqueName": "/home/d4v1d41/Projects/a/BlogNet/BlogNet.csproj",
       "projectName": "BlogNet",
-      "projectPath": "/home/d4v1d41/Projects/BlogNet/BlogNet.csproj",
+      "projectPath": "/home/d4v1d41/Projects/a/BlogNet/BlogNet.csproj",
       "packagesPath": "/home/d4v1d41/.nuget/packages/",
-      "outputPath": "/home/d4v1d41/Projects/BlogNet/obj/",
+      "outputPath": "/home/d4v1d41/Projects/a/BlogNet/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
@@ -12593,6 +12594,10 @@
             "version": "[2.1.0, )",
             "autoReferenced": true
           },
+          "Microsoft.EntityFrameworkCore.Design": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",
             "version": "[2.1.0, )"
@@ -12603,7 +12608,6 @@
             "autoReferenced": true
           },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )"
           }

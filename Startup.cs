@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using BlogNet.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using BlogNet.Models;
 
 namespace BlogNet
 {

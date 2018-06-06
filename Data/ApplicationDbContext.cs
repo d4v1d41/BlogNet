@@ -12,5 +12,6 @@ namespace BlogNet.Data
             : base(options)
         {
         }
+		public DbSet<BlogNet.Models.Blog> Blog { get; set; }
     }
 }
