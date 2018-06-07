@@ -1,8 +1,19 @@
 @model BlogNet.Models.Blog
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (!SignInManager.IsSignedIn(User))
+{            
+    <meta http-equiv="refresh" content="0; url=./">
+}
 
 @{
     ViewData["Title"] = "Create";
 }
+
+
 
 <h2>Create</h2>
 

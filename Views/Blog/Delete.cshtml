@@ -1,7 +1,16 @@
 @model BlogNet.Models.Blog
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
 @{
     ViewData["Title"] = "Delete";
+}
+
+@if (!SignInManager.IsSignedIn(User))
+{            
+    <meta http-equiv="refresh" content="4; url=./Blog">
 }
 
 <h2>Delete</h2>
