@@ -30,15 +30,18 @@ if (SignInManager.IsSignedIn(User))
     <div class="user-info">
         <h2 style="text-align:center;">@Html.DisplayFor(modelItem => item.Title) - @Html.DisplayFor(modelItem => item.Time) years</h2>
         <img style="display:block; margin-left:auto; margin-right:auto; width:30%;height:30%" src="@Html.DisplayFor(modelItem => item.Picture)" alt="" class="image-spacing">
-        <p style="text-align: center;" class="no-space"><strong>@Html.DisplayFor(modelItem => item.Content)</strong></p>
+        <p style="text-align: center;margin-left:20%;margin-right:20%;" class="no-space"><strong>@item.Content.Substring(0,40)...</strong></p>
      </div>
      <div class="read-more" style="text-align: center;">
         <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-info">read more</a>
      </div>
 </div>
-<a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
-<a asp-action="Details" asp-route-id="@item.ID">Details</a>
-<a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+if(SignInManager.IsSignedIn(User)) 
+        {
+            <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+            <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+        }
+<a asp-action="Details" asp-route-id="@item.ID">Details</a>        
 <hr />
 }
                             
