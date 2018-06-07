@@ -4,9 +4,12 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
-@if (!SignInManager.IsSignedIn(User))
+@* Check if user is signed in, if false, redirect to login  *@     
+@{
+if (!SignInManager.IsSignedIn(User))
 {            
-    <meta http-equiv="refresh" content="0; url=./">
+    <meta http-equiv="refresh" content="0; url=../Identity/Account/Login">
+}
 }
 
 @{
@@ -50,8 +53,8 @@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
-            </div>
-        </form>
+        </div>
+    </form>
 </div>
 
 <div>

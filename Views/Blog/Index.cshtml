@@ -10,10 +10,16 @@
 
 <h2>BlogNet your personal website</h2>
 
+@* Check if user is signed in, if true, show button create new post *@
+@{
+if (SignInManager.IsSignedIn(User))
+    {            
+    <p>
+        <a class="btn btn-info" asp-action="Create">Create New</a>
+    </p>
+    }
+}
 
-<p>
-    <a class="btn btn-info" asp-action="Create">Create New</a>
-</p>
 
 @if(Model.Count()==0) {
 	<h1 style="text-align:center;">Empty</h1>
@@ -24,7 +30,7 @@
     <div class="user-info">
         <h2 style="text-align:center;">@Html.DisplayFor(modelItem => item.Title) - @Html.DisplayFor(modelItem => item.Time) years</h2>
         <img style="display:block; margin-left:auto; margin-right:auto; width:30%;height:30%" src="@Html.DisplayFor(modelItem => item.Picture)" alt="" class="image-spacing">
-        <p style="text-align: center;" class="no-space">@Html.DisplayFor(modelItem => item.Content)</p>
+        <p style="text-align: center;" class="no-space"><strong>@Html.DisplayFor(modelItem => item.Content)</strong></p>
      </div>
      <div class="read-more" style="text-align: center;">
         <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-info">read more</a>

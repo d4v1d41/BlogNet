@@ -34,9 +34,9 @@ namespace BlogNet
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
+            // Setting connection new connection string 
 			services.AddDbContext<ApplicationDbContext>(options =>options.UseSqlite("DataSource=./app.db"));
-            /*
+            /* Deprecated connection string in appsettings.json
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));*/
