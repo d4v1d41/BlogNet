@@ -10,6 +10,7 @@ namespace BlogNet.Models
         [DisplayName("Years")]
         public string Time { get; set; }
         [DisplayName("Description")]
+		[StringLength(500, MinimumLength = 60)]
         public string Content { get; set; }
         [DisplayName("URL of Logo")]
         public string Picture { get; set; }
