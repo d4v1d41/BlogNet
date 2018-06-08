@@ -3,16 +3,14 @@ using System;
 using BlogNet.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace BlogNet.Data.Migrations
+namespace BlogNet.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180606051007_InitialBlog")]
-    partial class InitialBlog
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,7 +21,8 @@ namespace BlogNet.Data.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Content");
+                    b.Property<string>("Description")
+                        .HasMaxLength(500);
 
                     b.Property<string>("Picture");
 

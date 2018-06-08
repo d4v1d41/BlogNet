@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -54,7 +54,7 @@ namespace BlogNet.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Title,Time,Content,Picture")] Blog blog)
+        public async Task<IActionResult> Create([Bind("ID,Title,Time,Description,Picture")] Blog blog)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace BlogNet.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,Time,Content,Picture")] Blog blog)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,Time,Description,Picture")] Blog blog)
         {
             if (id != blog.ID)
             {
