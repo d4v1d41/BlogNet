@@ -7,6 +7,7 @@
 @{
     ViewData["Title"] = "Edit";
 }
+@* Check if user is not signed in, if not signed in, redirect to blog. Got this from loginpartial file *@
 
 @if (!SignInManager.IsSignedIn(User))
 {            

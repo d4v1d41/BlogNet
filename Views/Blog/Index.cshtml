@@ -10,7 +10,7 @@
 
 <h2>BlogNet your personal website</h2>
 
-@* Check if user is signed in, if true, show button create new post *@
+@* Check if user is signed in, if true, show button create new post I got this from loginpartial *@
 @{
 if (SignInManager.IsSignedIn(User))
     {            
@@ -36,6 +36,7 @@ if (SignInManager.IsSignedIn(User))
         <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-info">read more</a>
      </div>
 </div>
+<!-- if user is signed in, show buttons edit and delete -->
 if(SignInManager.IsSignedIn(User)) 
         {
             <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
