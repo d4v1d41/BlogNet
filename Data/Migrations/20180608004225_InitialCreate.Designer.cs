@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace BlogNet.Migrations
+namespace BlogNet.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180608073655_ChangedNameofD")]
-    partial class ChangedNameofD
+    [Migration("20180608004225_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,11 +26,11 @@ namespace BlogNet.Migrations
                     b.Property<string>("Description")
                         .HasMaxLength(500);
 
-                    b.Property<string>("Picture");
-
                     b.Property<string>("Time");
 
                     b.Property<string>("Title");
+
+                    b.Property<string>("UrlPic");
 
                     b.HasKey("ID");
 

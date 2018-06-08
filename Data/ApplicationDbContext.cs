@@ -12,7 +12,6 @@ namespace BlogNet.Data
             : base(options)
         {
         }
-        // Add DBSet Model blog to the db context
 		public DbSet<BlogNet.Models.Blog> Blog { get; set; }
     }
 }

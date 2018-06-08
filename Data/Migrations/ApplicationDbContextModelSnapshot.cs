@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace BlogNet.Migrations
+namespace BlogNet.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -24,11 +24,11 @@ namespace BlogNet.Migrations
                     b.Property<string>("Description")
                         .HasMaxLength(500);
 
-                    b.Property<string>("Picture");
-
                     b.Property<string>("Time");
 
                     b.Property<string>("Title");
+
+                    b.Property<string>("UrlPic");
 
                     b.HasKey("ID");
 
